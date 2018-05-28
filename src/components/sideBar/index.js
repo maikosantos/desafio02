@@ -2,11 +2,13 @@ import React from 'react';
 
 import { Container } from './styles';
 
-const Header = () => (
+const SideBar = () => (
   <Container>
+    <div>Opa, beleza?</div>
+    <div>Opa, beleza?</div>
     <div>Opa, beleza?</div>
     <div>Opa, beleza?</div>
   </Container>
 );
 
-export default Header;
+export default SideBar;
