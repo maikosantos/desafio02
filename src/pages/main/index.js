@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Container } from './styles';
+import { Container, Div } from './styles';
 
 import Header from '../../components/header';
 import SideBar from '../../components/sideBar';
@@ -10,8 +10,10 @@ class Main extends Component {
     return (
       <Container>
         <SideBar />
-        <Header />
-        <ContainerIssues />
+        <Div>
+          <Header />
+          <ContainerIssues />
+        </Div>
       </Container>
     );
   }
