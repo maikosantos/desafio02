@@ -11,4 +11,21 @@ export const Container = styled.section`
   background: #fff;
 
   border: 1px solid;
+
+  select {
+    width: 200px;
+    height: 42px;
+    background-color: #fff;
+    border: 1px solid bold;
+    font-weight: bold;
+  }
+`;
+
+export const DivSelect = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  width: 200px;
+  height: 42px;
 `;
