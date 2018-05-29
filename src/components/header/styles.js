@@ -8,9 +8,9 @@ export const Container = styled.section`
   justify-content: space-between;
   margin: 0 auto;
   padding: 30px;
-  background: #fff;
+  background: #e0e0e0;
 
-  border: 1px solid;
+  /*border: 1px solid;*/
 
   select {
     width: 200px;

@@ -3,6 +3,8 @@ import api from '../../services/api';
 
 import { Container, Form } from './styles';
 
+import ListRepos from '../../components/listRepos';
+
 export default class SideBar extends Component {
   state = {
     loading: false,
@@ -49,6 +51,7 @@ export default class SideBar extends Component {
           </button>
         </Form>
         <hr />
+        <ListRepos />
       </Container>
     );
   }

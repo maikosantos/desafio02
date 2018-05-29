@@ -6,5 +6,5 @@ export const Container = styled.div`
   display: flex;
   background: #f5f5f5;
 
-  border: 1px solid;
+  /*border: 1px solid;*/
 `;

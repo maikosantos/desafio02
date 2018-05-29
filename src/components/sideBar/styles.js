@@ -9,7 +9,7 @@ export const Container = styled.div`
   padding: 30px;
   background: #fff;
 
-  border: 1px solid;
+  /*border: 1px solid;*/
 
   hr {
     margin-top: 20px;
