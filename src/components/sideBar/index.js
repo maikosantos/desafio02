@@ -22,7 +22,6 @@ export default class SideBar extends Component {
 
     try {
       const { data: repository } = await api.get(`/repos/${this.state.repositoryInput}`);
-      // repository.lastCommit = monent(repository.pushed_at).fromNow();
 
       this.setState({
         repositoryInput: '',
