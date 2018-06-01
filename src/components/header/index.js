@@ -17,7 +17,7 @@ export default class Header extends Component {
       <Container>
         <div>Opa, beleza?</div>
         <div>
-          <select value={this.state.value} onChange={this.handleChange}>
+          <select name="selectOption" value={this.state.value} onChange={this.handleChange}>
             <option value="Todas" selected>
               Todas
             </option>

@@ -13,6 +13,8 @@ export default class SideBar extends Component {
     repositories: [],
   };
 
+  // const filtro = document.getElementsByName('selectOption')[0].value;
+
   handleAddRepository = async (e) => {
     e.preventDefault();
 
@@ -51,7 +53,7 @@ export default class SideBar extends Component {
           </button>
         </Form>
         <hr />
-        <ListRepos />
+        <ListRepos repositories={this.state.repositories} />
       </Container>
     );
   }

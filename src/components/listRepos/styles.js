@@ -12,6 +12,40 @@ export const Repository = styled.div`
   margin-top: 30px;
   display: flex;
   flex-direction: row;
+`;
 
-  border: 1px solid;
+export const DivImagem = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  img {
+    width: 60px;
+    height: 60px;
+  }
+`;
+
+export const DivNames = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-self: center;
+  padding-left: 2px;
+
+  strong {
+    font-size: 16px;
+  }
+
+  small {
+    font-size: 14px;
+    color: #666;
+  }
+`;
+
+export const DivIcon = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  align-items: flex-end;
+  flex: 1 0;
 `;
