@@ -5,23 +5,11 @@ import PropTypes from 'prop-types';
 import ContainerIssues from '../../components/listIssues';
 
 import { Container, Repository, DivImagem, DivNames, DivIcon } from './styles';
-import { Div } from '../../pages/Main/styles';
 
-const handleClick = async (e, repository) => {
+const handleClick = async (e, repo) => {
   e.preventDefault();
-
-  ReactDOM.render(
-    <ContainerIssues />,
-    {
-      type: Div,
-      props: { repository },
-    },
-    document.getElementById('containerIssues'),
-  );
-
-  // https://medium.com/@oieduardorabelo/componentes-elementos-e-inst%C3%A2ncias-em-react-2833f613b063
-
-  // ReactDOM.render(<ContainerIssues />, document.getElementById('containerIssues'));
+  console.log(`${repo.owner.login}/${repo.name}`);
+  ReactDOM.render(<ContainerIssues repo={repo} />, document.getElementById('containerIssues'));
 };
 
 const ListRepos = ({ repositories }) => (

@@ -1,12 +1,17 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 
 import { Container } from './styles';
 
-const ContainerIssues = () => (
+const ListIssues = ({ repo }) => (
   <Container>
-    <div>Opa, beleza?</div>
-    <div>Opa, beleza?</div>
+    <Fragment>
+      {repo.map(repository => (
+        <Fragment>
+          <h1>{repository.login}</h1>
+        </Fragment>
+      ))}
+    </Fragment>
   </Container>
 );
 
-export default ContainerIssues;
+export default ListIssues;
