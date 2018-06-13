@@ -6,16 +6,10 @@ import ContainerIssues from '../../components/listIssues';
 
 import { Container, Repository, DivImagem, DivNames, DivIcon } from './styles';
 
-const handleClick = async (e, repo) => {
-  e.preventDefault();
-  console.log(`${repo.owner.login}/${repo.name}`);
-  ReactDOM.render(<ContainerIssues repo={repo} />, document.getElementById('containerIssues'));
-};
-
-const ListRepos = ({ repositories }) => (
+const ListRepos = ({ repositories, handleActiveRepository }) => (
   <Container>
     {repositories.map(repository => (
-      <Repository key={repository.id} onClick={e => handleClick(e, repository)}>
+      <Repository key={repository.id} onClick={() => handleActiveRepository(repository)}>
         <DivImagem>
           <img src={repository.owner.avatar_url} alt={repository.owner.login} />
         </DivImagem>

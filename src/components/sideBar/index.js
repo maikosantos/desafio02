@@ -52,7 +52,7 @@ export default class SideBar extends Component {
           </button>
         </Form>
         <hr />
-        <ListRepos repositories={this.state.repositories} />
+        <ListRepos handleActiveRepository={this.props.handleActiveRepository} repositories={this.state.repositories} />
       </Container>
     );
   }
