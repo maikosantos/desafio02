@@ -1,4 +1,5 @@
 import React from 'react';
+import Test from '../../components/teste';
 
 import { Container, SectionHeader, SectionIssues, DivImagem, DivNames } from './styles';
 
@@ -35,6 +36,7 @@ const ListIssues = props => (
       </select>
     </SectionHeader>
     <SectionIssues>
+      {console.log(props.issues)}
       {props.issues.map(issue => (
         <div key={issue.id}>
           <h1>{issue.number}</h1>

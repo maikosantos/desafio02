@@ -29,6 +29,7 @@ class Main extends Component {
         repositoryError: false,
       });
       // console.log(response);
+      // console.log(this.state.issues);
     } catch (err) {
       this.setState({ repositoryError: true });
       // console.log(err);
