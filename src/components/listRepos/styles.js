@@ -28,7 +28,7 @@ export const DivImagem = styled.div`
 export const DivNames = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   align-self: center;
   padding-left: 2px;
 
