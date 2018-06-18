@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import Test from '../../components/teste';
 
 import { Container, SectionHeader, SectionIssues, DivImagem, DivNames } from './styles';
@@ -37,11 +37,12 @@ const ListIssues = props => (
     </SectionHeader>
     <SectionIssues>
       {console.log(props.issues)}
-      {props.issues.map(issue => (
-        <div key={issue.id}>
-          <h1>{issue.number}</h1>
-        </div>
-      ))}
+      {props.issues.map(list =>
+        list.map(issue => (
+          <div key={issue.id}>
+            <h1>{issue.number}</h1>
+          </div>
+        )))}
     </SectionIssues>
   </Container>
 );

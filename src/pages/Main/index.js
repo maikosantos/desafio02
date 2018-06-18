@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import api from '../../services/api';
 import { Container, Div } from './styles';
 
-import Header from '../../components/header';
 import SideBar from '../../components/sideBar';
 import ListIssues from '../../components/listIssues';
 
@@ -19,19 +18,19 @@ class Main extends Component {
   };
 
   handleReturnIssues = async (repository) => {
-    this.setState({ loading: true });
+    // this.setState({ loading: true });
 
     try {
-      const { data: ListIssues } = await api.get(`/repos/${repository.full_name}/issues?state=all`);
+      const { data: arrayIssues } = await api.get(`/repos/${repository.full_name}/issues?state=open`);
 
       this.setState({
-        issues: [...this.state.issues, ListIssues],
-        repositoryError: false,
+        issues: [...this.state.issues, arrayIssues],
+        // repositoryError: false,
       });
       // console.log(response);
       // console.log(this.state.issues);
     } catch (err) {
-      this.setState({ repositoryError: true });
+      // this.setState({ repositoryError: true });
       // console.log(err);
     } finally {
       // this.setState({ loading: false });

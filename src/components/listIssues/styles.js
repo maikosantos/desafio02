@@ -12,7 +12,7 @@ export const Container = styled.div`
 export const SectionHeader = styled.div`
   width: 100%;
   height: 100px;
-  padding: 40px 80px;
+  padding: 40px 20px;
   background: #e0e0e0;
 
   display: flex;
@@ -65,12 +65,39 @@ export const DivNames = styled.div`
 `;
 
 export const SectionIssues = styled.div`
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+  background: #f5f5f5;
+  margin: 20px;
+
+  div {
+    height: 100px;
+    padding: 20px;
+    border-radius: 3px;
+    background: #fff;
+  }
+`;
+
+/*
+export const SectionIssues = styled.div`
   width: 100%;
   height: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: flex-start;
+  flex-wrap: wrap;
   margin: 0 auto;
-  padding: 0 30px;
   background: #f5f5f5;
-`;
+
+  div {
+    display: flex
+    width: 280px;
+    height: 100px;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 3px;
+    background: #fff;
+  }
+`; */

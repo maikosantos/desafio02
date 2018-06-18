@@ -1,8 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
-
-import ContainerIssues from '../../components/listIssues';
 
 import { Container, Repository, DivImagem, DivNames, DivIcon } from './styles';
 
