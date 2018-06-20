@@ -23,6 +23,7 @@ class Main extends Component {
     try {
       const { data: arrayIssues } = await api.get(`/repos/${repository.full_name}/issues?state=open`);
 
+      this.setState({ issues: [] });
       this.setState({
         issues: [...this.state.issues, arrayIssues],
         // repositoryError: false,
