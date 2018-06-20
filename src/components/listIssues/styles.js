@@ -73,10 +73,59 @@ export const SectionIssues = styled.div`
   margin: 20px;
 
   div {
-    height: 100px;
-    padding: 20px;
+    display: flex;
+    padding: 5px;
     border-radius: 3px;
     background: #fff;
+  }
+`;
+
+export const DivImagemIssue = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  img {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+  }
+`;
+
+export const DivLabelsIssues = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  align-self: center;
+  padding-left: 2px;
+
+  strong {
+    font-size: 16px;
+    padding-bottom: 3px;
+  }
+
+  small {
+    font-size: 14px;
+    color: #666;
+    padding-bottom: 3px;
+  }
+
+  a {
+    width: 120px;
+    height: 35px;
+    text-decoration: none;
+    background: #b286d1;
+    border-radius: 3px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
+
+    padding-top: 10px;
+    padding-left: 5px;
+
+    &:hover {
+      background: #b287e9;
+    }
   }
 `;
 

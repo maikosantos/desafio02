@@ -1,7 +1,15 @@
 import React, { Fragment } from 'react';
 import Test from '../../components/teste';
 
-import { Container, SectionHeader, SectionIssues, DivImagem, DivNames } from './styles';
+import {
+  Container,
+  SectionHeader,
+  SectionIssues,
+  DivImagem,
+  DivNames,
+  DivImagemIssue,
+  DivLabelsIssues,
+} from './styles';
 
 // class ListIssues extends Component {
 /* const state = { value: 'Todas' };
@@ -36,11 +44,20 @@ const ListIssues = props => (
       </select>
     </SectionHeader>
     <SectionIssues>
-      {console.log(props.issues)}
       {props.issues.map(list =>
         list.map(issue => (
           <div key={issue.id}>
-            <h1>{issue.number}</h1>
+            <DivImagemIssue>
+              <img src={issue.user.avatar_url} alt={issue.user.login} />
+            </DivImagemIssue>
+            <DivLabelsIssues>
+              <strong>{`${issue.title.substr(1, 20)}...`} </strong>
+              <small>{issue.user.login}</small>
+              <a href={issue.html_url} target="_blank">
+                <i className="fa fa-external-link" />
+                ABRIR ISSUE
+              </a>
+            </DivLabelsIssues>
           </div>
         )))}
     </SectionIssues>

@@ -13,8 +13,8 @@ class Main extends Component {
   };
 
   handleActiveRepository = (repository) => {
-    this.handleReturnIssues(repository);
     this.setState({ activeRepository: repository });
+    this.handleReturnIssues(repository);
   };
 
   handleReturnIssues = async (repository) => {
