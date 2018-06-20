@@ -12,7 +12,7 @@ import {
 
 // const filtro = document.getElementsByName('selectOption')[0].value;
 
-console.log(document.getElementsByName('selectOption').value();
+console.log(document.getElementById('selectOption'));
 
 const ListIssues = props => (
   <Container>
@@ -26,7 +26,7 @@ const ListIssues = props => (
           <small>{props.repository.owner.login}</small>
         </DivNames>
       </div>
-      <select name="selectOption">
+      <select id="selectOption" name="selectOption">
         <option value="Todas" selected>
           Todas
         </option>

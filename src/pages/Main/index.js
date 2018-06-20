@@ -23,6 +23,12 @@ class Main extends Component {
     // const filtro = document.getElementsByName('selectOption')[0].value;
     // console.log(filtro);
 
+    // console.log({$('selectOption').val()});
+
+    // const e = document.getElementById('selectOption');
+    // const itemSelecionado = e.options[e.selectedIndex].text;
+    // console.log(itemSelecionado);
+
     try {
       const { data: arrayIssues } = await api.get(`/repos/${repository.full_name}/issues?state=open`);
 
@@ -39,6 +45,10 @@ class Main extends Component {
     } finally {
       // this.setState({ loading: false });
     }
+
+    const e = document.getElementById('selectOption');
+    const itemSelecionado = e.options[e.selectedIndex].text;
+    console.log(itemSelecionado);
   };
 
   render() {
