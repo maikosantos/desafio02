@@ -20,6 +20,9 @@ class Main extends Component {
   handleReturnIssues = async (repository) => {
     // this.setState({ loading: true });
 
+    // const filtro = document.getElementsByName('selectOption')[0].value;
+    // console.log(filtro);
+
     try {
       const { data: arrayIssues } = await api.get(`/repos/${repository.full_name}/issues?state=open`);
 
@@ -31,7 +34,7 @@ class Main extends Component {
       // console.log(response);
       // console.log(this.state.issues);
     } catch (err) {
-      // this.setState({ repositoryError: true });
+      this.setState({ repositoryError: true });
       // console.log(err);
     } finally {
       // this.setState({ loading: false });

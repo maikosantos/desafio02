@@ -1,5 +1,4 @@
-import React, { Fragment } from 'react';
-import Test from '../../components/teste';
+import React from 'react';
 
 import {
   Container,
@@ -11,17 +10,9 @@ import {
   DivLabelsIssues,
 } from './styles';
 
-// class ListIssues extends Component {
-/* const state = { value: 'Todas' };
+// const filtro = document.getElementsByName('selectOption')[0].value;
 
-const handleChange = async (event) => {
-  event.preventDefault();
-
-  this.setState({ value: event.target.value });
-  // console.log(event.target.value);
-}; */
-
-// <select name="selectOption" value={this.state.value} onChange={handleChange}>
+console.log(document.getElementsByName('selectOption').value();
 
 const ListIssues = props => (
   <Container>
