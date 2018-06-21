@@ -5,10 +5,10 @@ import { Container, Div } from './styles';
 import SideBar from '../../components/sideBar';
 import ListIssues from '../../components/listIssues';
 
-class Main extends Component {
+export default class Main extends Component {
   state = {
+    loading: false,
     activeRepository: null,
-    repositoryError: false,
     issues: [],
   };
 
@@ -18,37 +18,23 @@ class Main extends Component {
   };
 
   handleReturnIssues = async (repository) => {
-    // this.setState({ loading: true });
+    this.setState({ loading: true });
 
-    // const filtro = document.getElementsByName('selectOption')[0].value;
-    // console.log(filtro);
-
-    // console.log({$('selectOption').val()});
-
-    // const e = document.getElementById('selectOption');
-    // const itemSelecionado = e.options[e.selectedIndex].text;
-    // console.log(itemSelecionado);
+    const e = document.getElementById('selectOption');
+    const filtroSelecionado = e === null ? 'all' : e.options[e.selectedIndex].value;
 
     try {
-      const { data: arrayIssues } = await api.get(`/repos/${repository.full_name}/issues?state=open`);
+      const { data: arrayIssues } = await api.get(`/repos/${repository.full_name}/issues?state=${filtroSelecionado}`);
 
       this.setState({ issues: [] });
       this.setState({
         issues: [...this.state.issues, arrayIssues],
-        // repositoryError: false,
       });
-      // console.log(response);
-      // console.log(this.state.issues);
     } catch (err) {
-      this.setState({ repositoryError: true });
-      // console.log(err);
+      console.log(err);
     } finally {
-      // this.setState({ loading: false });
+      this.setState({ loading: false });
     }
-
-    const e = document.getElementById('selectOption');
-    const itemSelecionado = e.options[e.selectedIndex].text;
-    console.log(itemSelecionado);
   };
 
   render() {
@@ -57,12 +43,15 @@ class Main extends Component {
         <SideBar handleActiveRepository={this.handleActiveRepository} />
         <Div>
           {!!this.state.activeRepository && (
-            <ListIssues repository={this.state.activeRepository} issues={this.state.issues} />
+            <ListIssues
+              handleActiveRepository={this.handleActiveRepository}
+              repository={this.state.activeRepository}
+              issues={this.state.issues}
+              loading={this.state.loading}
+            />
           )}
         </Div>
       </Container>
     );
   }
 }
-
-export default Main;
