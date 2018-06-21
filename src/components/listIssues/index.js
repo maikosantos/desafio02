@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import {
   Container,
@@ -30,7 +31,7 @@ const ListIssues = props => (
     </SectionHeader>
     {props.loading ? (
       <h1>
-        <i className="fa fa-spinner fa-pulse" /> Consultando informações...
+        <i className="fa fa-spinner fa-pulse" /> Aguarde...Consultando informações!
       </h1>
     ) : (
       <SectionIssues>
@@ -54,4 +55,22 @@ const ListIssues = props => (
     )}
   </Container>
 );
+
+ListIssues.defaultProps = {
+  // children: 'Salvar',
+};
+
+ListIssues.propTypes = {
+  loading: PropTypes.bool.isRequired,
+  handleActiveRepository: PropTypes.func.isRequired,
+  repository: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.number,
+    name: PropTypes.string,
+    owner: PropTypes.shape({
+      login: PropTypes.string,
+      avatar_url: PropTypes.string,
+    }),
+  })).isRequired,
+};
+
 export default ListIssues;

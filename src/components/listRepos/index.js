@@ -31,6 +31,7 @@ ListRepos.propTypes = {
       avatar_url: PropTypes.string,
     }),
   })).isRequired,
+  handleActiveRepository: PropTypes.func.isRequired,
 };
 
 export default ListRepos;
