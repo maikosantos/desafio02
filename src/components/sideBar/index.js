@@ -10,6 +10,7 @@ export default class SideBar extends Component {
     loading: false,
     repositoryInput: '',
     repositoryError: false,
+    countRepos: 0,
     repositories: [],
   };
 
@@ -25,11 +26,15 @@ export default class SideBar extends Component {
         repositoryInput: '',
         repositories: [...this.state.repositories, repository],
         repositoryError: false,
+        countRepos: this.state.countRepos + 1,
       });
-      // console.log(response);
+
+      if (this.state.countRepos > 1) {
+        document.getElementById('selectOption').value = 'all';
+      }
     } catch (err) {
       this.setState({ repositoryError: true });
-      // console.log(err);
+      console.log(err);
     } finally {
       this.setState({ loading: false });
     }

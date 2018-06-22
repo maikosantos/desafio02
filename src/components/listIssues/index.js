@@ -56,20 +56,15 @@ const ListIssues = props => (
   </Container>
 );
 
-ListIssues.defaultProps = {
-  // children: 'Salvar',
-};
-
 ListIssues.propTypes = {
   loading: PropTypes.bool.isRequired,
   handleActiveRepository: PropTypes.func.isRequired,
+  issues: PropTypes.isRequired,
   repository: PropTypes.arrayOf(PropTypes.shape({
     id: PropTypes.number,
     name: PropTypes.string,
-    owner: PropTypes.shape({
-      login: PropTypes.string,
-      avatar_url: PropTypes.string,
-    }),
+    avatar_url: PropTypes.string,
+    login: PropTypes.string,
   })).isRequired,
 };
 
