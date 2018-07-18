@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import api from '../../services/api';
+import PropTypes from 'prop-types';
 
 import { Container, Form } from './styles';
 
@@ -63,3 +64,7 @@ export default class SideBar extends Component {
     );
   }
 }
+
+SideBar.propTypes = {
+  handleActiveRepository: PropTypes.func.isRequired,
+};
